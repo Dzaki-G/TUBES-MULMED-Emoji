@@ -1,3 +1,4 @@
+
 # game_emotion.py
 import cv2
 import time
@@ -20,8 +21,10 @@ score = 0
 round_num = 1
 round_emojis = get_random_emojis(3)
 matched = set()
-game_duration = 30
+game_duration = 9999
 start_time = time.time()
+current_index = 0   # first emoji
+
 
 while True:
     ret, frame = cap.read()
@@ -38,13 +41,31 @@ while True:
         cv2.putText(frame, f"Detected: {detected}", (10,40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0),2)
 
     # draw emojis
-    draw_floating_emojis(frame, round_emojis, emoji_images, face_box=face_box, size=100, matched_emojis=matched)
+    draw_floating_emojis(
+    frame, round_emojis, emoji_images,
+    face_box=face_box,
+    size=100,
+    matched_emojis=matched,
+    current_index=current_index)
+
 
     # matching logic
-    for key in round_emojis:
-        if detected == emoji_map[key] and key not in matched:
+    if detected and current_index < len(round_emojis):
+        current_key = round_emojis[current_index]        
+        current_emotion = emoji_map[current_key]        
+
+        if detected == current_emotion:
             score += 1
-            matched.add(key)
+            matched.add(current_key)
+            current_index += 1
+
+            # if finished all emojis in this round
+            if current_index >= len(round_emojis):
+                round_num += 1
+                round_emojis = get_random_emojis(3)
+                matched.clear()
+                current_index = 0
+
 
     # next round
     if len(matched) == len(round_emojis):
@@ -66,3 +87,4 @@ cv2.destroyAllWindows()
 print("Time's up!" if remaining == 0 else "Quit")
 print(f"Final score: {score}")
 print(f"Rounds: {round_num - 1}")
+

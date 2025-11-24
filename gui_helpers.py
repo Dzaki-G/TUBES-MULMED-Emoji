@@ -1,3 +1,4 @@
+
 # gui_helpers.py
 import time
 import numpy as np
@@ -24,7 +25,9 @@ def calculate_emoji_positions(face_box, num=3, spacing=120, above_offset=140):
         positions.append((x_offset, y_offset))
     return positions
 
-def draw_floating_emojis(frame, emoji_keys, emoji_images, face_box=None, size=100, matched_emojis=None):
+
+def draw_floating_emojis(frame, emoji_keys, emoji_images, face_box=None, size=100, matched_emojis=None, current_index=0):
+
     """Place emoji images on frame. emoji_keys are glyphs from emoji_map."""
     if matched_emojis is None:
         matched_emojis = set()
@@ -43,7 +46,7 @@ def draw_floating_emojis(frame, emoji_keys, emoji_images, face_box=None, size=10
         y += float_offset
         x = max(0, x); y = max(0, y)
 
-        # === DRAW THE EMOJI ===
+        # draw the emoji
         if resized.shape[2] == 4:
             alpha = resized[:, :, 3]
             overlay = resized[:, :, :3]
@@ -53,11 +56,21 @@ def draw_floating_emojis(frame, emoji_keys, emoji_images, face_box=None, size=10
             h, w = resized.shape[:2]
             if y + h <= frame.shape[0] and x + w <= frame.shape[1]:
                 frame[y:y+h, x:x+w] = resized
+        
+        # highlight current target with YELLOW
+        if i == current_index and key not in matched_emojis:
+            cv2.rectangle(frame,
+                        (x, y),
+                        (x + size, y + size),
+                        (0, 255, 255),    
+                        3)
 
-        # === GREEN HIGHLIGHT IF MATCHED ===
+
+        # green highlight if matched
         if key in matched_emojis:
             cv2.rectangle(frame,
                           (x, y),
                           (x + size, y + size),
                           (0, 255, 0), 3)
+
 
