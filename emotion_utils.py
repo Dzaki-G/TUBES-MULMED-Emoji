@@ -9,7 +9,6 @@ emoji_map = {
     "😠": "angry",
     "😐": "neutral",
     "😮": 'surprise',
-    "🤢": 'disgust',
     "😨": "fear"
 }
 
