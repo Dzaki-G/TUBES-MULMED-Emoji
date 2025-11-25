@@ -10,6 +10,41 @@ def draw_text_lines(img, lines, start=(10,30), line_height=40, scale=0.9, color=
     for i, line in enumerate(lines):
         cv2.putText(img, line, (x, y + i*line_height), cv2.FONT_HERSHEY_SIMPLEX, scale, color, 2)
 
+def draw_simple_hud(frame, round_num, score, remaining):
+    text = f"Round: {round_num}   Time: {remaining}s   Score: {score}"
+
+    h, w = frame.shape[:2]
+
+    # basic setup
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    font_scale = 0.8
+    thickness = 2
+
+    # measure text width/height
+    (text_width, text_height), _ = cv2.getTextSize(text, font, font_scale, thickness)
+
+    # center horizontally
+    x = (w - text_width) // 2
+    y = 40  # top margin
+
+    # if text is too big, auto-scale down
+    if text_width > w - 40:
+        font_scale = (w - 40) / text_width * 0.8
+        thickness = 1
+        (text_width, text_height), _ = cv2.getTextSize(text, font, font_scale, thickness)
+        x = (w - text_width) // 2
+
+    cv2.putText(
+        frame,
+        text,
+        (x, y),
+        font,
+        font_scale,
+        (255,255,255),
+        thickness,
+        cv2.LINE_AA
+    )
+
 def calculate_emoji_positions(face_box, num=3, spacing=120, above_offset=140):
     """Return list of (x,y) top-left positions for num emojis relative to face_box."""
     if face_box is None:
