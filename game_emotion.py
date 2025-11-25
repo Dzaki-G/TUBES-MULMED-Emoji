@@ -4,7 +4,7 @@ import cv2
 import time
 from emotion_utils import get_emotion, get_random_emojis, emoji_map
 from emoji_overlay import load_emoji_images
-from gui_helpers import draw_floating_emojis, draw_text_lines, draw_simple_hud
+from gui_helpers import draw_floating_emojis, draw_text_lines, draw_simple_hud, draw_current_emotion
 from audio_utils import init_audio, play_bgm, stop_bgm, play_sfx
 
 def run_game(cap):
@@ -42,6 +42,8 @@ def run_game(cap):
             matched_emojis=matched,
             current_index=current_index
         )
+
+        draw_current_emotion(frame, detected, emoji_images)
 
         # logika untuk matching emoji dan detection
         if detected and current_index < len(round_emojis):
