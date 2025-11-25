@@ -4,6 +4,7 @@ import cv2
 import numpy as np
 import time
 from PIL import Image, ImageDraw, ImageFont
+from audio_utils import play_sfx
 
 # ============================
 #   Mouse Global State
@@ -89,6 +90,12 @@ def show_main_menu(cap):
         frame = cv2.flip(frame, 1)
         blur = cv2.GaussianBlur(frame, (35, 35), 0)
 
+        # Dark overlay smooth
+        overlay_alpha = 0.5   # ubah jadi 0.35–0.50 sesuai selera
+        dark = np.zeros_like(blur)
+
+        blur = cv2.addWeighted(blur, 1 - overlay_alpha, dark, overlay_alpha, 0)
+
         h, w = blur.shape[:2]
 
         # ---- Title ----
@@ -143,7 +150,7 @@ def show_main_menu(cap):
 def show_countdown(cap, duration=3):
     window_name = "Emotion Match Game"
     start_time = time.time()
-
+    play_sfx("assets/audio/mariostart.mp3")
     while True:
         ret, frame = cap.read()
         if not ret:
@@ -151,6 +158,12 @@ def show_countdown(cap, duration=3):
 
         frame = cv2.flip(frame, 1)
         blur = cv2.GaussianBlur(frame, (35, 35), 0)
+
+        # Dark overlay smooth
+        overlay_alpha = 0.5   # ubah jadi 0.35–0.50 sesuai selera
+        dark = np.zeros_like(blur)
+
+        blur = cv2.addWeighted(blur, 1 - overlay_alpha, dark, overlay_alpha, 0)
 
         elapsed = int(time.time() - start_time)
         number = duration - elapsed
