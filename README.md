@@ -1,6 +1,6 @@
 # MIMIC THE EMOJI 
 
-<img align="center" src="assets/image/thumbnail.jpeg" height="700" />
+<img align="center" src="assets/poster.jpg" height="700" />
 
 ## 📋 Deskripsi Proyek 
 <i>Mimic the Emoji</i> adalah sebuah game berbasis kamera yang mendeteksi ekspresi wajah pemain menggunakan DeepFace. Pemain akan ditampilkan 3 emoji secara acak, kemudian harus menirukan ekspresi emoji satu per satu dengan benar dan secepat mungkin untuk mendapatkan skor tertinggi.
