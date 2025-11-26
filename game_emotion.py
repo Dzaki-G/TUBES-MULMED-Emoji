@@ -16,13 +16,16 @@ def run_game(cap):
     current_index = 0
     game_duration = 30
     start_time = time.time()
-
+    play_bgm("assets/audio/bgm.mp3")
     # setup
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
     emoji_images = load_emoji_images("assets")
 
     # loop game
     while True:
+        # bg music
+        
+
         ret, frame = cap.read()
         if not ret:
             break
@@ -68,7 +71,9 @@ def run_game(cap):
         cv2.imshow("Emotion Match Game", frame)
         if cv2.waitKey(1) & 0xFF == ord('q') or remaining == 0:
             break
-
+    
+    # stop bg music
+    stop_bgm()        
     return score
 
 
