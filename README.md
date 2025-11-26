@@ -123,7 +123,7 @@ cd TUBES-MULMED-Emoji
 
 
 ### 2. Buat dan Aktifkan Virtual Environment
-pada terminal anda jalankan:
+Pastikan sudah ada python dengan versi 3.8 +, lalu pada terminal anda jalankan: 
 ```bash
 # buat venv baru
 python -m venv venv
