@@ -2,15 +2,6 @@
 
 <img align="center" src="assets/image/thumbnail.jpeg" height="700" />
 
-## 📖 Daftar Isi
-- [Deskripsi Proyek](#deskripsi-proyek)
-- [Anggota Kelompok](#anggota-kelompok)
-- [Teknologi Aplikasi](#teknologi-aplikasi)
-- [Instruksi Instalasi](#instruksi-instalasi)
-- [Logbook Mingguan](#logbook-mingguan)
-- [Laporan](#laporan)
-- [Demo Program](#demo-program)
-
 ## 📋 Deskripsi Proyek 
 <i>Mimic the Emoji</i> adalah sebuah game berbasis kamera yang mendeteksi ekspresi wajah pemain menggunakan DeepFace. Pemain akan ditampilkan 3 emoji secara acak, kemudian harus menirukan ekspresi emoji satu per satu dengan benar dan secepat mungkin untuk mendapatkan skor tertinggi.
 
@@ -87,7 +78,39 @@ Cara Kerja:
 
 ## 📋 Logbook Mingguan
 
-### TABEL LOGCOOK MINGGUAN
+### TABEL LOGBOOK MINGGUAN
+<table>
+
+  <tr>
+    <td><b>Minggu 1 (8 Nov 2025)</b></td>
+    <td>
+      Setup awal proyek di GitHub, pembuatan struktur folder, serta melakukan pengujian awal terhadap model deteksi emosi yang akan digunakan.
+    </td>
+  </tr>
+
+  <tr>
+    <td><b>Minggu 2 (16 Nov 2025)</b></td>
+    <td>
+      Pengembangan logika dasar game, seperti alur gameplay dan sistem penilaian, serta penambahan dan penyesuaian aset emoji untuk kebutuhan permainan.
+    </td>
+  </tr>
+
+  <tr>
+    <td><b>Minggu 3 (25 Nov 2025)</b></td>
+    <td>
+      Implementasi fitur Main Menu dan Game Over screen, termasuk navigasi antar scene serta penampilan skor akhir dan high score.
+    </td>
+  </tr>
+
+  <tr>
+    <td><b>Minggu 4 (26 Nov 2025)</b></td>
+    <td>
+      Finalisasi tampilan UI game, penyempurnaan elemen visual, penempatan elemen pada layar, dan perbaikan keseluruhan user interface.
+    </td>
+  </tr>
+
+</table>
+
 
 ## 📋 Instruksi Instalasi
 ### 1. Clone Repository
