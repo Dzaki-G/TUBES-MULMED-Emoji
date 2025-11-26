@@ -128,7 +128,7 @@ def show_main_menu(cap):
     """
     global mouse_clicked, mouse_x, mouse_y
 
-    window_name = "Emotion Match Game"
+    window_name = "Mimic The Emoji"
 
     # Aktifkan callback mouse untuk jendela OpenCV
     cv2.setMouseCallback(window_name, mouse_callback)
@@ -218,7 +218,7 @@ def show_countdown(cap, duration=3):
     Returns:
         None
     """
-    window_name = "Emotion Match Game"
+    window_name = "Mimic The Emoji"
     start_time = time.time()
 
     # Mainkan suara start

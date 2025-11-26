@@ -135,7 +135,7 @@ def show_game_over(cap, score, highscore):
     """
     global mouse_clicked, mouse_x, mouse_y
 
-    window_name = "Emotion Match Game"
+    window_name = "Mimic The Emoji"
     cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
     cv2.resizeWindow(window_name, 1600, 900)
 

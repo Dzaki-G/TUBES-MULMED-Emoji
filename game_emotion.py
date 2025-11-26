@@ -9,7 +9,7 @@ from audio_utils import init_audio, play_bgm, stop_bgm, play_sfx
 
 def run_game(cap):
     """
-    Fungsi utama loop permainan Emotion Match Game.
+    Fungsi utama loop permainan Mimic The Emoji.
 
     Game akan:
     - Mengambil ekspresi wajah user melalui kamera.
@@ -112,7 +112,7 @@ def run_game(cap):
         draw_simple_hud(frame, round_num, score, remaining)
 
         # Tampilkan frame
-        cv2.imshow("Emotion Match Game", frame)
+        cv2.imshow("Mimic The Emoji", frame)
 
         # Game berhenti jika:
         # 1) user menekan 'q'
@@ -147,8 +147,8 @@ def main():
 
     # Inisialisasi kamera
     cap = cv2.VideoCapture(0)
-    cv2.namedWindow("Emotion Match Game", cv2.WINDOW_NORMAL)
-    cv2.resizeWindow("Emotion Match Game", 1600, 900)
+    cv2.namedWindow("Mimic The Emoji", cv2.WINDOW_NORMAL)
+    cv2.resizeWindow("Mimic The Emoji", 1600, 900)
 
     # Inisialisasi audio pygame
     init_audio()
