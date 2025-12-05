@@ -111,6 +111,17 @@ Cara Kerja:
 
 </table>
 
+## 📋 Demo Game
+### 1. Main Menu
+<img align="center" src="assets/demo/main_menu.jpg" height="auto" />
+
+### 2. Gameplay
+<img align="center" src="assets/demo/gameplay.jpg" height="auto" />
+
+### 3. Game Over
+<img align="center" src="assets/demo/game_over.jpg" height="auto" />
+
+
 
 ## 📋 Instruksi Instalasi
 ### 1. Clone Repository
