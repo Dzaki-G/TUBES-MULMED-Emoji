@@ -130,7 +130,7 @@ Clone repository ini ke komputer anda dan pastikan sudah didalam folder mimic-th
 ```bash
 git clone https://github.com/Dzaki-G/TUBES-MULMED-Emoji.git
 cd TUBES-MULMED-Emoji
-cd mimic-theemoji
+cd mimic-the-emoji
 ```
 
 
