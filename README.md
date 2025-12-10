@@ -1,6 +1,6 @@
 # MIMIC THE EMOJI 
 
-<img align="center" src="assets/poster.jpg" height="700" />
+<img align="center" src="mimic-the-emoji/assets/poster.jpg" height="700" />
 
 ## 📋 Deskripsi Proyek 
 <i>Mimic the Emoji</i> adalah sebuah game berbasis kamera yang mendeteksi ekspresi wajah pemain menggunakan DeepFace. Pemain akan ditampilkan 3 emoji secara acak, kemudian harus menirukan ekspresi emoji satu per satu dengan benar dan secepat mungkin untuk mendapatkan skor tertinggi.
@@ -113,23 +113,24 @@ Cara Kerja:
 
 ## 📋 Demo Game
 ### 1. Main Menu
-<img align="center" src="assets/demo/main_menu.jpg" height="auto" />
+<img align="center" src="mimic-the-emoji/assets/demo/main_menu.jpg" height="auto" />
 
 ### 2. Gameplay
-<img align="center" src="assets/demo/gameplay.jpg" height="auto" />
+<img align="center" src="mimic-the-emoji/assets/demo/gameplay.jpg" height="auto" />
 
 ### 3. Game Over
-<img align="center" src="assets/demo/game_over.jpg" height="auto" />
+<img align="center" src="mimic-the-emoji/assets/demo/game_over.jpg" height="auto" />
 
 
 
 ## 📋 Instruksi Instalasi
 ### 1. Clone Repository
 
-Clone repository ini ke komputer anda:
+Clone repository ini ke komputer anda dan pastikan sudah didalam folder mimic-the-emoji:
 ```bash
 git clone https://github.com/Dzaki-G/TUBES-MULMED-Emoji.git
 cd TUBES-MULMED-Emoji
+cd mimic-theemoji
 ```
 
 
@@ -163,7 +164,7 @@ pip install -r requirements.txt
 
 ### To Run MIMIC THE EMOJI
 
-Jalankan ini pada terminal(pastikan sudah masuk ke directory TUBES-MULMED-Emoji)
+Jalankan ini pada terminal(pastikan sudah masuk ke directory mimic-the-emoji)
 ```bash
 python game_emotion.py
 ```
